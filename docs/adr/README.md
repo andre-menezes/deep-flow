@@ -61,3 +61,4 @@ O que passa a ser mais fácil, mais difícil ou proibido.
 | [ADR-0003](./ADR-0003-state-management.md)                   | State management                   | Accepted |
 | [ADR-0004](./ADR-0004-entitlements-and-authorization.md)     | Entitlements and authorization     | Accepted |
 | [ADR-0005](./ADR-0005-http-client.md)                        | HTTP client                        | Accepted |
+| [ADR-0006](./ADR-0006-authentication-strategy.md)            | Authentication strategy            | Accepted |
