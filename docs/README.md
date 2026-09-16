@@ -24,7 +24,7 @@ Implementation
 | `architecture/` | Como o projeto deve ser desenvolvido (regras aplicáveis) |
 | `features/` | Como cada funcionalidade deve funcionar (FEATURE/BUG specs) |
 | `api/` | Contratos OpenAPI, códigos de erro |
-| `conventions/` | Convenções transversais (nomenclatura de docs, commits) |
+| `conventions/` | Convenções transversais (docs, git/branches/commits) |
 
 ## Como usar esta documentação
 
@@ -33,8 +33,8 @@ Implementation
 3. Se uma decisão mudar, registre uma nova ADR (não reescreva a antiga em silêncio).
 4. Prefira exemplos e anti-exemplos a frases vagas.
 
-## Produto e backlog de decisões
+## Produto, backlog e convenções
 
-- Visão de produto: [`product/vision.md`](./product/vision.md)
-- Decisões em aberto: [`architecture/open-decisions.md`](./architecture/open-decisions.md)
+- Visão e backlog: [`product/vision.md`](./product/vision.md), [`architecture/open-decisions.md`](./architecture/open-decisions.md)
+- Branches e commits: [`conventions/git-workflow.md`](./conventions/git-workflow.md)
 - Histórico da discussão inicial (não normativo): [`archive/`](./archive/)
