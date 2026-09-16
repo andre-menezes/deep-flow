@@ -48,11 +48,20 @@ Manter rules **curtas**. Detalhe aponta para docs.
 
 ```text
 .cursor/agents/
-└── studia-code-reviewer.md
+├── studia-code-reviewer.md
+├── studia-docs-writer.md
+├── studia-architecture-guard.md
+└── studia-feature-implementer.md
 ```
 
-O subagente `studia-code-reviewer` revisa o diff contra ADRs/guidelines/`AGENTS.md`.  
-**Obrigatório antes de cada commit:** o hook `beforeShellExecution` em `.cursor/hooks.json` bloqueia `git commit` até existir um pass válido em `.cursor/hooks/state/code-review-ok.json` (gerado pelo subagente quando o veredito é APPROVE).
+| Subagente | Papel |
+|---|---|
+| `studia-code-reviewer` | Review pré-commit (gate obrigatório via hook) |
+| `studia-docs-writer` | ADR / FEATURE / BUG / guidelines |
+| `studia-architecture-guard` | Compliance de arquitetura em `src/` |
+| `studia-feature-implementer` | Implementação Vue a partir de FEATURE |
+
+**Obrigatório antes de cada commit:** o hook `beforeShellExecution` em `.cursor/hooks.json` bloqueia `git commit` até existir um pass válido em `.cursor/hooks/state/code-review-ok.json` (gerado pelo `studia-code-reviewer` quando o veredito é APPROVE).
 
 ## MCP recomendado
 
