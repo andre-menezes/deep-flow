@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "login": {
+      "subtitle": "Sign in to organize your Studies.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in"
+    }
+  }
+}

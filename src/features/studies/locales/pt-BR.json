@@ -1,0 +1,20 @@
+{
+  "studies": {
+    "home": {
+      "title": "Seus Studies",
+      "subtitle": "O que você está estudando agora?",
+      "create": "Criar Study"
+    },
+    "wizard": {
+      "title": "Novo Study",
+      "step": "Etapa {step} de {total}",
+      "submit": "Criar Study",
+      "fields": {
+        "title": "Nome",
+        "objective": "Objetivo",
+        "frequency": "Frequência / rotina",
+        "notes": "Notas (opcional)"
+      }
+    }
+  }
+}

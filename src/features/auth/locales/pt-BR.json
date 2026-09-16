@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "login": {
+      "subtitle": "Entre para organizar seus Studies.",
+      "email": "E-mail",
+      "password": "Senha",
+      "submit": "Entrar"
+    }
+  }
+}
