@@ -22,12 +22,13 @@ Orientar a leitura da documentação arquitetural da Studia.
 | Tooling de IA                        | `ai-tooling.md`                       |
 | HTTP client                          | ADR-0005 + `http-client.md`           |
 | Autenticação (client)                | ADR-0006 + `authentication.md`        |
+| Stub HTTP local de DX                | ADR-0008 + `tools/mock-server/`       |
 | Backlog de decisões                  | `open-decisions.md`                   |
 
 ## Backend (direção, ainda não implementado)
 
 - Direção atual: **Spring Boot 3 + Java 21**
-- Frontend não bloqueia: Mock Server externo
+- Frontend não bloqueia: stub DX em `tools/mock-server/` (`bun run mock`); Mock Server oficial/dedicated permanece meta **fora** deste repositório (ADR-0001 + ADR-0008)
 - Contrato futuro: OpenAPI 3.1 + RFC 9457 + cookies para refresh token
 
 ## Próximos documentos recomendados

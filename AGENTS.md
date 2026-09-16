@@ -14,7 +14,7 @@ Histórico (não normativo): `docs/archive/` — não usar como regra.
 - Fase: documentação e arquitetura (pouco ou nenhum código de app ainda).
 - Frontend alvo: Vue 3 + TypeScript + Vite + Pinia + Vue Router + Tailwind v4 + ofetch + Vue I18n.
 - Backend alvo (ainda inexistente): Spring Boot 3 + Java 21.
-- Desenvolvimento inicial do frontend: Mock Server **fora** deste repositório.
+- DX local: stub HTTP em `tools/mock-server/` (`bun run mock`, ADR-0008). Mock Server oficial/dedicated permanece meta **fora** deste repositório (ADR-0001).
 
 ## Mapa rápido
 

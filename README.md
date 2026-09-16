@@ -12,12 +12,18 @@ A **Studia** é uma plataforma web para planejamento e gerenciamento de estudos 
 
 ## App (frontend)
 
-Requer [Bun](https://bun.sh) e um Mock Server externo alinhado a `docs/api/openapi.yaml`.
+Requer [Bun](https://bun.sh). Para API local use o mock em `tools/mock-server` (ou outro Mock alinhado a `docs/api/`).
 
 ```bash
+# terminal 1 — API mock
+bun run mock
+
+# terminal 2 — frontend
 cp .env.example .env
 bun install
 bun run dev
 ```
+
+Login seed do mock: `demo@studia.app` / `studia123`
 
 `VITE_API_BASE_URL` deve apontar para o Mock (ex.: `http://localhost:3000/api/v1`).

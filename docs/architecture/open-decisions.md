@@ -23,6 +23,7 @@ Substituir a lista §56–57 da discussão inicial por um backlog vivo de decis�
 | Visão de produto / Study | `docs/product/vision.md` |
 | HTTP client / single-flight / erros HTTP (mínimo) | ADR-0005 + `http-client.md` |
 | Auth (sliding session, rotation, bootstrap, TTLs MVP) | ADR-0006 + `authentication.md` |
+| Stub HTTP local de DX (`tools/mock-server`) | ADR-0008 |
 | FEATURE Study creation wizard | FEATURE-0001 |
 
 ## Abertas (próximos passos sugeridos)
