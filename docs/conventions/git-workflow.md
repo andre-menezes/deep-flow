@@ -153,12 +153,19 @@ Fixed stuff.
 6. invocar subagente `studia-code-reviewer` → Verdict APPROVE
 7. commits (Conventional Commits) — hook valida o pass do review
 8. git push -u origin HEAD          # NUNCA develop/main
-9. abrir PR → base develop
+9. (opcional) subagente `studia-pr-summarizer`
+10. abrir PR → base develop (template: `.github/pull_request_template.md`)
 ```
 
 Se o trabalho já começou por engano em `develop`: mover commits/alterações para uma branch nova a partir de `develop` atualizada; não fazer push de `develop`.
 
 Emergência apenas: `STUDIA_SKIP_CODE_REVIEW=1` no ambiente do comando de commit (não usar no fluxo normal).
+
+## Pull Requests
+
+- Template GitHub: [`.github/pull_request_template.md`](../../.github/pull_request_template.md)
+- Base padrão: **`develop`**
+- Subagente auxiliar: `studia-pr-summarizer`
 
 ## Resultado esperado
 

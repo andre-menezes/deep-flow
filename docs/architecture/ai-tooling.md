@@ -51,7 +51,11 @@ Manter rules **curtas**. Detalhe aponta para docs.
 ├── studia-code-reviewer.md
 ├── studia-docs-writer.md
 ├── studia-architecture-guard.md
-└── studia-feature-implementer.md
+├── studia-feature-implementer.md
+├── studia-pr-summarizer.md
+├── studia-api-contract.md
+├── studia-i18n-checker.md
+└── studia-test-planner.md
 ```
 
 | Subagente | Papel |
@@ -60,8 +64,14 @@ Manter rules **curtas**. Detalhe aponta para docs.
 | `studia-docs-writer` | ADR / FEATURE / BUG / guidelines |
 | `studia-architecture-guard` | Compliance de arquitetura em `src/` |
 | `studia-feature-implementer` | Implementação Vue a partir de FEATURE |
+| `studia-pr-summarizer` | Título/corpo de PR (template GitHub) |
+| `studia-api-contract` | OpenAPI / error codes / Mock parity |
+| `studia-i18n-checker` | Locales e erros → i18n |
+| `studia-test-planner` | Casos de teste mínimos |
 
 **Obrigatório antes de cada commit:** o hook `beforeShellExecution` em `.cursor/hooks.json` bloqueia `git commit` até existir um pass válido em `.cursor/hooks/state/code-review-ok.json` (gerado pelo `studia-code-reviewer` quando o veredito é APPROVE).
+
+Template de PR: [`.github/pull_request_template.md`](../../.github/pull_request_template.md).
 
 ## MCP recomendado
 
