@@ -26,6 +26,7 @@ Histórico (não normativo): `docs/archive/` — não usar como regra.
 | Estrutura e imports              | `docs/architecture/project-structure.md`, `dependency-rules.md` |
 | Estado / Pinia / sessão          | `docs/architecture/state-management.md`, ADR-0003, ADR-0004     |
 | Como nomear docs                 | `docs/conventions/document-naming.md`                           |
+| Branches e commits               | `docs/conventions/git-workflow.md`                              |
 | Skills / Rules / MCP             | `docs/architecture/ai-tooling.md`                               |
 
 ## Regras duras (sempre)
@@ -40,6 +41,7 @@ Histórico (não normativo): `docs/archive/` — não usar como regra.
 8. Antes de mudar arquitetura, preferir ADR (`Proposed` → `Accepted`).
 9. Responda ao usuário em **português**, salvo se ele pedir outro idioma.
 10. Commits: Conventional Commits; dependências com versões fixas (Bun no frontend).
+11. Git: branch a partir de `develop` antes de qualquer alteração; **nunca** push em `main`/`develop` — ver `docs/conventions/git-workflow.md`.
 
 ## O que NÃO fazer ainda
 
@@ -62,5 +64,9 @@ Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 pa
 
 ## Branching
 
-- Base de integração atual: `develop`.
-- Branches de trabalho Cloud: `cursor/<descriptive-name>-a5fe` quando aplicável.
+- Base de integração: `develop`.
+- **Sempre** `git checkout -b <tipo>/<descricao>` a partir de `develop` antes de editar arquivos.
+- **Nunca** push direto em `main` ou `develop` — só via Pull Request.
+- Convenção completa: [`docs/conventions/git-workflow.md`](docs/conventions/git-workflow.md).
+- Exemplos: `docs/adr-0005-http-client`, `feat/feature-0001-study-wizard`, `fix/bug-0001-token-refresh`.
+- Cloud Agents: se a plataforma exigir `cursor/...`, manter o restante alinhado (`cursor/docs-adr-0005-http-client-a5fe`).
