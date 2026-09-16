@@ -10,17 +10,18 @@ Orientar a leitura da documentação arquitetural da Studia.
 
 ## Pilares já aceitos
 
-| Pilar | Documento |
-|---|---|
-| Arquitetura frontend | ADR-0001 |
-| Estrutura por features | ADR-0002 + `project-structure.md` |
-| Dependências entre módulos | `dependency-rules.md` |
-| Estado (Pinia, UI vs resource) | ADR-0003 + `state-management.md` |
-| Entitlements / autorização no client | ADR-0004 |
-| Nomenclatura de docs | `docs/conventions/document-naming.md` |
-| Visão de produto | `docs/product/vision.md` |
-| Tooling de IA | `ai-tooling.md` |
-| Backlog de decisões | `open-decisions.md` |
+| Pilar                                | Documento                             |
+| ------------------------------------ | ------------------------------------- |
+| Arquitetura frontend                 | ADR-0001                              |
+| Estrutura por features               | ADR-0002 + `project-structure.md`     |
+| Dependências entre módulos           | `dependency-rules.md`                 |
+| Estado (Pinia, UI vs resource)       | ADR-0003 + `state-management.md`      |
+| Entitlements / autorização no client | ADR-0004                              |
+| Nomenclatura de docs                 | `docs/conventions/document-naming.md` |
+| Visão de produto                     | `docs/product/vision.md`              |
+| Tooling de IA                        | `ai-tooling.md`                       |
+| HTTP client                          | ADR-0005 + `http-client.md`           |
+| Backlog de decisões                  | `open-decisions.md`                   |
 
 ## Backend (direção, ainda não implementado)
 
@@ -32,11 +33,10 @@ Orientar a leitura da documentação arquitetural da Studia.
 
 Em ordem sugerida:
 
-1. `ADR-0005` — HTTP client, refresh single-flight e armazenamento de tokens
-2. `ADR-0006` — Estratégia de autenticação (sliding session, rotation)
-3. Guideline de UI/componentes e i18n
-4. Primeira `FEATURE-0001` (ex.: study creation wizard)
-5. Contrato inicial em `docs/api/`
+1. `ADR-0006` — Estratégia de autenticação (sliding session, rotation, cookies)
+2. Guideline de UI/componentes e i18n
+3. Primeira `FEATURE-0001` (ex.: study creation wizard)
+4. Contrato inicial em `docs/api/` + `error-codes.md`
 
 ## Fonte de premissas
 

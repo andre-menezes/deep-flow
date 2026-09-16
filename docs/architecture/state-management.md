@@ -10,8 +10,9 @@ Pinia, composables de feature, bootstrap de sessão.
 
 ## Fora do escopo
 
-- Política exata de expiração de tokens (ADR futura de auth HTTP).
+- Política exata de expiração/rotação de tokens (ADR-0006).
 - Contrato OpenAPI definitivo dos endpoints.
+- Detalhe do cliente HTTP: ADR-0005 e `http-client.md`.
 
 ## Conceitos
 
@@ -59,12 +60,12 @@ Carrega user, plan (informativo), entitlements e usage.
 
 ## Quando usar composable vs store
 
-| Situação | Preferir |
-|---|---|
-| Estado local de um fluxo (wizard) | composable |
-| Cache de recurso compartilhado entre views | resource store |
-| Sessão / entitlements | store em `features/auth` |
-| Utilitário sem estado | função em `shared/utils` ou composable sem store |
+| Situação                                   | Preferir                                         |
+| ------------------------------------------ | ------------------------------------------------ |
+| Estado local de um fluxo (wizard)          | composable                                       |
+| Cache de recurso compartilhado entre views | resource store                                   |
+| Sessão / entitlements                      | store em `features/auth`                         |
+| Utilitário sem estado                      | função em `shared/utils` ou composable sem store |
 
 ## Migração Mock → API → (opcional) Query lib
 
@@ -96,5 +97,5 @@ UI permanece desacoplada da origem dos dados; entitlements têm um único ponto 
 
 ## Referências
 
-- ADR-0003, ADR-0004
-- `docs/archive/DISCUSSION-2026-09-initial.md` §§17–26
+- ADR-0003, ADR-0004, ADR-0005
+- `docs/architecture/http-client.md`
