@@ -2,7 +2,7 @@
 
 - **Status:** Accepted
 - **Data:** 2026-09-16
-- **Contexto:** discussão de estrutura de pastas; `discussion.md` §§5, 32–34
+- **Contexto:** discussão de estrutura de pastas; `docs/archive/DISCUSSION-2026-09-initial.md` §§5, 32–34
 
 ## Contexto
 
@@ -66,7 +66,7 @@ Não exporta: views, componentes internos, services, mutações internas.
 
 ### Criação sob demanda
 
-Pastas e arquivos só são criados quando há necessidade real (`discussion.md` §32).
+Pastas e arquivos só são criados quando há necessidade real (`docs/archive/DISCUSSION-2026-09-initial.md` §32).
 
 ## Consequências
 

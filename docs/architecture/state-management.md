@@ -97,4 +97,4 @@ UI permanece desacoplada da origem dos dados; entitlements têm um único ponto 
 ## Referências
 
 - ADR-0003, ADR-0004
-- `discussion.md` §§17–26
+- `docs/archive/DISCUSSION-2026-09-initial.md` §§17–26

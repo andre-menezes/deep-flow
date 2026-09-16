@@ -33,7 +33,8 @@ Implementation
 3. Se uma decisão mudar, registre uma nova ADR (não reescreva a antiga em silêncio).
 4. Prefira exemplos e anti-exemplos a frases vagas.
 
-## Contexto inicial
+## Produto e backlog de decisões
 
-As premissas de produto e as decisões preliminares estão registradas em [`../discussion.md`](../discussion.md).
-Esse arquivo **não** é especificação definitiva; as decisões formalizadas vivem neste diretório `docs/`.
+- Visão de produto: [`product/vision.md`](./product/vision.md)
+- Decisões em aberto: [`architecture/open-decisions.md`](./architecture/open-decisions.md)
+- Histórico da discussão inicial (não normativo): [`archive/`](./archive/)

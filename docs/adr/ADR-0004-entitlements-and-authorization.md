@@ -2,7 +2,7 @@
 
 - **Status:** Accepted
 - **Data:** 2026-09-16
-- **Contexto:** `discussion.md` §§12–16; pergunta sobre `/entitlements` na discussão de estado
+- **Contexto:** `docs/archive/DISCUSSION-2026-09-initial.md` §§12–16; pergunta sobre `/entitlements` na discussão de estado
 
 ## Contexto
 
@@ -71,7 +71,7 @@ A escolha exata do endpoint fica para o contrato de API; o frontend depende da *
 
 O usage de criações **não** é derivado da quantidade atual de Studies no cliente.
 
-Vem do backend/mock como contadores (`used`, `limit`, `remaining`), alinhado a `discussion.md` §13.
+Vem do backend/mock como contadores (`used`, `limit`, `remaining`), alinhado a `docs/archive/DISCUSSION-2026-09-initial.md` §13.
 
 ## Consequências
 
@@ -108,4 +108,4 @@ if (session.user.plan === 'FREE' && studies.length >= 3) { /* ... */ }
 
 - `docs/architecture/state-management.md`
 - `docs/adr/ADR-0003-state-management.md`
-- `discussion.md` §§12–16
+- `docs/archive/DISCUSSION-2026-09-initial.md` §§12–16

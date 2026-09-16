@@ -19,7 +19,7 @@ Ver `docs/conventions/document-naming.md`.
 
 - **Status:** Proposed | Accepted | Deprecated | Superseded by ADR-XXXX
 - **Data:** YYYY-MM-DD
-- **Contexto:** discussion.md / conversa / issue
+- **Contexto:** conversa / issue / `docs/architecture/open-decisions.md`
 
 ## Contexto
 
@@ -49,7 +49,7 @@ O que passa a ser mais fácil, mais difícil ou proibido.
 
 ## Referências
 
-- links para guidelines, discussion.md, ADRs relacionadas
+- links para guidelines, product vision, ADRs relacionadas
 ```
 
 ## Índice

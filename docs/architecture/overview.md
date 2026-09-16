@@ -18,6 +18,9 @@ Orientar a leitura da documentação arquitetural do Deep Flow.
 | Estado (Pinia, UI vs resource) | ADR-0003 + `state-management.md` |
 | Entitlements / autorização no client | ADR-0004 |
 | Nomenclatura de docs | `docs/conventions/document-naming.md` |
+| Visão de produto | `docs/product/vision.md` |
+| Tooling de IA | `ai-tooling.md` |
+| Backlog de decisões | `open-decisions.md` |
 
 ## Backend (direção, ainda não implementado)
 
@@ -37,4 +40,5 @@ Em ordem sugerida:
 
 ## Fonte de premissas
 
-`discussion.md` na raiz permanece como histórico da discussão inicial. Regras normativas passam a viver em `docs/`.
+A discussão inicial foi **arquivada** em `docs/archive/DISCUSSION-2026-09-initial.md` e não é fonte normativa.  
+Use `docs/product/vision.md`, ADRs e `open-decisions.md`. O arquivo histórico pode ser removido quando o critério em `open-decisions.md` for atendido (o Git preserva o conteúdo).

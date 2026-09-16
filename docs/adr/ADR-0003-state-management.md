@@ -75,7 +75,7 @@ Só quando existir pelo menos um destes:
 
 ## Consequências
 
-- MVP simples (só Pinia), alinhado a `discussion.md` §36.
+- MVP simples (só Pinia), alinhado a `docs/archive/DISCUSSION-2026-09-initial.md` §36.
 - Caminho de migração documentado; evita acoplar componentes ao mock.
 - Resource stores não devem virar “God stores”; preferir stores por agregado/contexto.
 - Wizard continua fora do domínio (`useStudyWizard` em composable de feature).
@@ -110,4 +110,4 @@ Só quando existir pelo menos um destes:
 
 - `docs/architecture/state-management.md`
 - `docs/adr/ADR-0004-entitlements-and-authorization.md`
-- `discussion.md` §§7, 21–26, 36
+- `docs/archive/DISCUSSION-2026-09-initial.md` §§7, 21–26, 36

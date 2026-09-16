@@ -2,7 +2,7 @@
 
 - **Status:** Accepted
 - **Data:** 2026-09-16
-- **Contexto:** `discussion.md` §§31–37, 55–58
+- **Contexto:** `docs/archive/DISCUSSION-2026-09-initial.md` §§31–37, 55–58
 
 ## Contexto
 
@@ -30,7 +30,7 @@ O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvol
 
 - Há uma árvore previsível para localizar responsabilidades.
 - O Mock Server permanece fora do repositório do frontend.
-- Decisões de produto em `discussion.md` precisam ser promovidas a ADRs/guidelines/specs antes de virarem regra de implementação.
+- Decisões de produto em `docs/archive/DISCUSSION-2026-09-initial.md` precisam ser promovidas a ADRs/guidelines/specs antes de virarem regra de implementação.
 - Trocar Mock → Spring Boot não deve exigir reestruturar `src/`, apenas contratos e configuração HTTP.
 
 ## Exemplos
@@ -50,10 +50,10 @@ O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvol
 ## Alternativas consideradas
 
 - Organização horizontal (`components/`, `services/`, `stores/` globais): descartada por acoplamento e baixa descoberta por feature.
-- Clean Architecture física completa no frontend: descartada por verbosidade prematura (ver `discussion.md` §35).
+- Clean Architecture física completa no frontend: descartada por verbosidade prematura (ver `docs/archive/DISCUSSION-2026-09-initial.md` §35).
 
 ## Referências
 
 - `docs/adr/ADR-0002-feature-oriented-project-structure.md`
 - `docs/architecture/project-structure.md`
-- `discussion.md`
+- `docs/archive/DISCUSSION-2026-09-initial.md`

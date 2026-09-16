@@ -1,0 +1,16 @@
+---
+description: Invariantes do Deep Flow — sempre aplicáveis
+alwaysApply: true
+---
+
+# Deep Flow invariants
+
+- Fonte normativa: `docs/` (ADRs, architecture, product, features). Não use `docs/archive/` como regra.
+- Estrutura: `src/{app,features,shared,types}` conforme ADR-0001/0002.
+- Imports cross-feature somente via `@/features/<name>` (`index.ts`).
+- Sem HTTP em componentes; usar services da feature + `shared/http`.
+- Autorização de UX via entitlements (`can` / `limits`), nunca `user.plan === …`.
+- Sem abstrações prematuras (Repository/UseCase/Mapper sem necessidade).
+- Docs novos: `ADR|FEATURE|BUG-NNNN-<slug>.md` (ver `docs/conventions/document-naming.md`).
+- Responder ao usuário em português, salvo pedido contrário.
+- Antes de mudar arquitetura ou produto: ler skill `deep-flow-architecture` ou `writing-project-docs`.

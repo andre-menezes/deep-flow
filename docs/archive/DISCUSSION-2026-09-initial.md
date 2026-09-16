@@ -1,7 +1,10 @@
 # Contexto e Decisões Iniciais do Projeto
 
-> **Status:** Discussão arquitetural inicial
-> **Objetivo:** Registrar as principais decisões e premissas estabelecidas durante a fase de planejamento do projeto, antes da elaboração da documentação técnica definitiva.
+> **Status:** ARCHIVED (histórico)
+> **Não usar como fonte normativa.** Premissas úteis foram promovidas para `docs/product/vision.md`, ADRs e `docs/architecture/open-decisions.md`.
+> **Remoção:** candidata quando o critério em `open-decisions.md` for atendido. Conteúdo permanece no Git.
+>
+> **Objetivo original:** Registrar decisões da fase de planejamento antes da documentação técnica definitiva.
 
 ---
 
