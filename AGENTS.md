@@ -69,6 +69,7 @@ Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 pa
 - **Sempre** `git checkout -b <tipo>/<descricao>` a partir de `develop` antes de editar arquivos.
 - **Nunca** push direto em `main` ou `develop` — só via Pull Request.
 - Convenção completa: [`docs/conventions/git-workflow.md`](docs/conventions/git-workflow.md).
+- Template de PR: [`.github/pull_request_template.md`](.github/pull_request_template.md).
 - Exemplos: `docs/adr-0005-http-client`, `feat/feature-0001-study-wizard`, `fix/bug-0001-token-refresh`.
 - Cloud Agents: se a plataforma exigir `cursor/...`, manter o restante alinhado (`cursor/docs-adr-0005-http-client-a5fe`).
 
@@ -80,3 +81,7 @@ Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 pa
 | `studia-docs-writer` | Criar/editar ADR, FEATURE, BUG, guidelines; fechar itens em `open-decisions.md` |
 | `studia-architecture-guard` | Após mudanças em `src/` ou dúvidas de camadas/imports/HTTP/entitlements |
 | `studia-feature-implementer` | Implementar comportamento a partir de `FEATURE-NNNN` (Vue/features) |
+| `studia-pr-summarizer` | Antes de `gh pr create`; título/corpo no template do repositório |
+| `studia-api-contract` | Contratos em `docs/api/`, error codes, alinhamento ADR-0005 |
+| `studia-i18n-checker` | Locales pt-BR/en e mapeamento de erros API → i18n |
+| `studia-test-planner` | Plano mínimo de testes (unit/component/e2e) por mudança/FEATURE |
