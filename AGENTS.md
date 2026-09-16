@@ -77,3 +77,6 @@ Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 pa
 | Subagente | Quando |
 |---|---|
 | `studia-code-reviewer` | **Sempre** antes de `git commit`; revisa o diff contra docs normativas |
+| `studia-docs-writer` | Criar/editar ADR, FEATURE, BUG, guidelines; fechar itens em `open-decisions.md` |
+| `studia-architecture-guard` | Após mudanças em `src/` ou dúvidas de camadas/imports/HTTP/entitlements |
+| `studia-feature-implementer` | Implementar comportamento a partir de `FEATURE-NNNN` (Vue/features) |
