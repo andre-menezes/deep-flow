@@ -54,10 +54,9 @@ O que passa a ser mais fácil, mais difícil ou proibido.
 
 ## Índice
 
-| ADR | Título | Status |
-|---|---|---|
-| [ADR-0001](./ADR-0001-frontend-architecture.md) | Frontend architecture | Accepted |
+| ADR                                                          | Título                             | Status   |
+| ------------------------------------------------------------ | ---------------------------------- | -------- |
+| [ADR-0001](./ADR-0001-frontend-architecture.md)              | Frontend architecture              | Accepted |
 | [ADR-0002](./ADR-0002-feature-oriented-project-structure.md) | Feature-oriented project structure | Accepted |
-| [ADR-0003](./ADR-0003-state-management.md) | State management | Accepted |
-| [ADR-0004](./ADR-0004-entitlements-and-authorization.md) | Entitlements and authorization | Accepted |
-| [ADR-0005](./ADR-0005-product-naming-studia.md) | Product naming: Studia | Accepted |
+| [ADR-0003](./ADR-0003-state-management.md)                   | State management                   | Accepted |
+| [ADR-0004](./ADR-0004-entitlements-and-authorization.md)     | Entitlements and authorization     | Accepted |

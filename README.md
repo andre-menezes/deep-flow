@@ -1,7 +1,5 @@
 # Studia
 
-> Nome do projeto: **Studia** (anteriormente "Deep Flow"). O repositório GitHub ainda usa o slug `deep-flow`; a renomeação do repositório/domínio é um passo separado, fora do escopo desta documentação.
-
 A **Studia** é uma plataforma web para planejamento e gerenciamento de estudos contínuos. Projetada para estudantes e autodidatas, ajuda a transformar grandes metas de aprendizado em cronogramas práticos, combinando técnicas comprovadas de produtividade com acompanhamento visual de desempenho.
 
 ## Documentação
