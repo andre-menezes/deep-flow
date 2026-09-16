@@ -22,6 +22,7 @@ Orientar a leitura da documentação arquitetural da Studia.
 | Tooling de IA                        | `ai-tooling.md`                       |
 | HTTP client                          | ADR-0005 + `http-client.md`           |
 | Autenticação (client)                | ADR-0006 + `authentication.md`        |
+| i18n                                 | `i18n.md`                             |
 | Backlog de decisões                  | `open-decisions.md`                   |
 
 ## Backend (direção, ainda não implementado)
@@ -34,9 +35,9 @@ Orientar a leitura da documentação arquitetural da Studia.
 
 Em ordem sugerida:
 
-1. Contrato inicial em `docs/api/` + `error-codes.md`
-2. Guideline de UI/componentes e i18n
-3. FEATURE de edição de Study / dashboard (após FEATURE-0001)
+1. Contrato inicial em `docs/api/` + `error-codes.md` (PR em andamento / ADR-0007)
+2. FEATURE de edição de Study / dashboard (após FEATURE-0001)
+3. Scaffolding mínimo do app Vue contra Mock Server
 
 ## Fonte de premissas
 

@@ -24,6 +24,7 @@ Substituir a lista §56–57 da discussão inicial por um backlog vivo de decis�
 | HTTP client / single-flight / erros HTTP (mínimo) | ADR-0005 + `http-client.md` |
 | Auth (sliding session, rotation, bootstrap, TTLs MVP) | ADR-0006 + `authentication.md` |
 | FEATURE Study creation wizard | FEATURE-0001 |
+| i18n (organização e erros → chaves) | `docs/architecture/i18n.md` |
 
 ## Abertas (próximos passos sugeridos)
 
@@ -38,11 +39,10 @@ Ordenado pela sequência útil de documentação:
 | 5 | Critérios de composables e componentes | guideline UI |
 | 6 | Layouts, navegação, design tokens, breakpoints | guideline + FEATURE dashboard |
 | 7 | Sistema de componentes / a11y / SEO | guidelines |
-| 8 | i18n (organização já esboçada; fechar regras) | ADR ou guideline |
-| 9 | Estratégia de testes + coverage mínimo | guideline `testing.md` |
-| 10 | CI/CD + versionamento do app | guideline / ADR |
-| 11 | Modelo definitivo de Task / Note | FEATURE ou domain spec |
-| 12 | Necessidade de StudySession no roadmap | product decision |
+| 8 | Estratégia de testes + coverage mínimo | guideline `testing.md` |
+| 9 | CI/CD + versionamento do app | guideline / ADR |
+| 10 | Modelo definitivo de Task / Note | FEATURE ou domain spec |
+| 11 | Necessidade de StudySession no roadmap | product decision |
 
 ## Critério para apagar o arquivo histórico
 
