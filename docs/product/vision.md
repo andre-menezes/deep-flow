@@ -88,6 +88,6 @@ Qualquer FEATURE/BUG parte desta visão sem releitura do arquivo histórico de d
 
 ## Referências
 
-- ADR-0001 … ADR-0004
+- ADR-0001 … ADR-0006
+- FEATURE-0001 (wizard de criação de Study)
 - `docs/architecture/open-decisions.md`
-- Arquivo histórico: `docs/archive/DISCUSSION-2026-09-initial.md`

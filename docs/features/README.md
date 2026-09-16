@@ -34,4 +34,4 @@ Referências (ADRs / guidelines)
 
 | Doc | Título | Status |
 |---|---|---|
-| — | (nenhuma spec ainda) | — |
+| [FEATURE-0001](./FEATURE-0001-study-creation-wizard.md) | Study creation wizard | Ready |

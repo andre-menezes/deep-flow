@@ -10,7 +10,7 @@ Pinia, composables de feature, bootstrap de sessão.
 
 ## Fora do escopo
 
-- Política exata de expiração/rotação de tokens (ADR-0006).
+- Política detalhada de autenticação além do resumo abaixo: ADR-0006 + `authentication.md`.
 - Contrato OpenAPI definitivo dos endpoints.
 - Detalhe do cliente HTTP: ADR-0005 e `http-client.md`.
 
@@ -97,5 +97,6 @@ UI permanece desacoplada da origem dos dados; entitlements têm um único ponto 
 
 ## Referências
 
-- ADR-0003, ADR-0004, ADR-0005
+- ADR-0003, ADR-0004, ADR-0005, ADR-0006
 - `docs/architecture/http-client.md`
+- `docs/architecture/authentication.md`

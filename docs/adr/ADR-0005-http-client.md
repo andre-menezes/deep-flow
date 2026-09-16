@@ -82,9 +82,9 @@ Refresh concorrente **não** deve gerar N `POST /auth/refresh`.
 
 ### 6. O que fica fora deste ADR
 
-- Duração exata de access/refresh, rotação detalhada e revogação multi-dispositivo → **ADR-0006** (e seguintes).
 - Paths OpenAPI definitivos → `docs/api/`.
 - Retry genérico por 5xx / backoff de rede → não obrigatório no MVP (pode evoluir depois).
+- Estratégia completa de autenticação → **ADR-0006** (este ADR cobre só a borda HTTP).
 
 ## Consequências
 
