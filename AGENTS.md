@@ -1,0 +1,66 @@
+# AGENTS.md
+
+Orienta agentes de IA (Cursor e outros) que trabalham neste repositório.
+
+## O que é o projeto
+
+Studia (nome anterior: Deep Flow) é um SaaS de planejamento e organização de estudos. Premissa de produto: **incentivar e organizar, não fiscalizar**.
+
+Fonte normativa: `docs/` (ADRs, architecture, product, FEATURE/BUG).  
+Histórico (não normativo): `docs/archive/` — não usar como regra.
+
+## Estado atual
+
+- Fase: documentação e arquitetura (pouco ou nenhum código de app ainda).
+- Frontend alvo: Vue 3 + TypeScript + Vite + Pinia + Vue Router + Tailwind v4 + ofetch + Vue I18n.
+- Backend alvo (ainda inexistente): Spring Boot 3 + Java 21.
+- Desenvolvimento inicial do frontend: Mock Server **fora** deste repositório.
+
+## Mapa rápido
+
+| Precisa de… | Leia… |
+|---|---|
+| Visão de produto | `docs/product/vision.md` |
+| Decisões abertas / próximos docs | `docs/architecture/open-decisions.md` |
+| Decisões arquiteturais | `docs/adr/` |
+| Estrutura e imports | `docs/architecture/project-structure.md`, `dependency-rules.md` |
+| Estado / Pinia / sessão | `docs/architecture/state-management.md`, ADR-0003, ADR-0004 |
+| Como nomear docs | `docs/conventions/document-naming.md` |
+| Skills / Rules / MCP | `docs/architecture/ai-tooling.md` |
+
+## Regras duras (sempre)
+
+1. Não use `docs/archive/` como fonte de regras; não reative o arquivo de discussão como spec.
+2. Não invente estrutura de pastas fora do que está em ADR-0001/0002.
+3. Não espalhe `if (plan === 'FREE'|'PREMIUM')` — use entitlements (`can` / `limits`).
+4. Não chame HTTP de componentes; use `features/*/services` + `shared/http`.
+5. Não importe interno de outra feature — só via `features/<name>/index.ts`.
+6. Não crie abstrações (`Repository`, `UseCase`, `Mapper`…) sem necessidade real.
+7. Antes de implementar comportamento de produto, preferir existir `FEATURE-NNNN-*.md`.
+8. Antes de mudar arquitetura, preferir ADR (`Proposed` → `Accepted`).
+9. Responda ao usuário em **português**, salvo se ele pedir outro idioma.
+10. Commits: Conventional Commits; dependências com versões fixas (Bun no frontend).
+
+## O que NÃO fazer ainda
+
+- Não scaffolding massivo de pastas vazias.
+- Não introduzir TanStack Query no MVP.
+- Não criar `features/entitlements/` isolada no MVP (vive com `auth`).
+- Não acoplar o domínio ao wizard (`currentStep` é UI/composable).
+
+## Skills do projeto
+
+| Skill | Quando |
+|---|---|
+| `studia-architecture` | Qualquer mudança de código/estrutura/arquitetura |
+| `writing-project-docs` | Criar/editar ADR, FEATURE, BUG ou guideline |
+| `implementing-vue-feature` | Implementar ou alterar uma feature Vue |
+
+## MCPs
+
+Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 para docs de libs.
+
+## Branching
+
+- Base de integração atual: `develop`.
+- Branches de trabalho Cloud: `cursor/<descriptive-name>-a5fe` quando aplicável.
