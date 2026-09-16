@@ -19,6 +19,7 @@ Todo trabalho no repositório Studia (docs, código, config).
 2. **Nunca** fazer push direto em `main` ou `develop`.
 3. Integração apenas via **Pull Request** → `develop` (e `develop` → `main` quando houver release).
 4. Commits: **Conventional Commits**.
+5. **Antes de cada commit:** executar o subagente `studia-code-reviewer` e obter **APPROVE** (hook bloqueia `git commit` sem pass válido).
 
 ```text
 develop (integração)
@@ -148,12 +149,16 @@ Fixed stuff.
 2. git checkout develop
 3. git pull origin develop
 4. git checkout -b <tipo>/<descricao>
-5. alterar arquivos + commits (Conventional Commits)
-6. git push -u origin HEAD          # NUNCA develop/main
-7. abrir PR → base develop
+5. alterar arquivos
+6. invocar subagente `studia-code-reviewer` → Verdict APPROVE
+7. commits (Conventional Commits) — hook valida o pass do review
+8. git push -u origin HEAD          # NUNCA develop/main
+9. abrir PR → base develop
 ```
 
 Se o trabalho já começou por engano em `develop`: mover commits/alterações para uma branch nova a partir de `develop` atualizada; não fazer push de `develop`.
+
+Emergência apenas: `STUDIA_SKIP_CODE_REVIEW=1` no ambiente do comando de commit (não usar no fluxo normal).
 
 ## Resultado esperado
 
