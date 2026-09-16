@@ -25,7 +25,7 @@ Definir onde vive orientação para IA (Skills, Rules, AGENTS.md, MCP) sem dupli
 
 ```text
 .cursor/skills/
-├── deep-flow-architecture/
+├── studia-architecture/
 ├── writing-project-docs/
 │   └── references/templates.md
 └── implementing-vue-feature/
@@ -46,7 +46,7 @@ Manter rules **curtas**. Detalhe aponta para docs.
 
 Configurado em `.cursor/mcp.json` (sem segredos commitados).
 
-| MCP | Uso no Deep Flow |
+| MCP | Uso na Studia |
 |---|---|
 | **Context7** | Docs atualizados de Vue, Vite, Pinia, Vue Router, Tailwind, ofetch, Spring |
 | Browser / Playwright (ambiente) | Validação UI quando houver app |

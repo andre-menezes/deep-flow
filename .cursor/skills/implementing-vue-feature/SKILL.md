@@ -1,7 +1,7 @@
 ---
 name: implementing-vue-feature
 description: >-
-  Implements or changes a Deep Flow Vue feature following feature folders,
+  Implements or changes a Studia Vue feature following feature folders,
   public index.ts, services, Pinia resource/UI stores, i18n per feature, and
   colocated unit tests. Use when adding views, components, stores, services,
   routes, or behavior inside src/features or shared UI consumed by features.
@@ -10,7 +10,7 @@ paths:
   - "tests/**"
 ---
 
-# Deep Flow — Implementing a Vue feature
+# Studia — Implementing a Vue feature
 
 ## When to use
 
@@ -19,7 +19,7 @@ paths:
 
 ## Preconditions
 
-1. Siga a skill `deep-flow-architecture`.
+1. Siga a skill `studia-architecture`.
 2. Se for comportamento de produto novo, preferir `FEATURE-NNNN-*.md` (skill `writing-project-docs`).
 3. Não crie pastas vazias “por completude”.
 

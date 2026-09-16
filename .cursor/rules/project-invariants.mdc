@@ -1,9 +1,9 @@
 ---
-description: Invariantes do Deep Flow — sempre aplicáveis
+description: Invariantes da Studia — sempre aplicáveis
 alwaysApply: true
 ---
 
-# Deep Flow invariants
+# Studia invariants
 
 - Fonte normativa: `docs/` (ADRs, architecture, product, features). Não use `docs/archive/` como regra.
 - Estrutura: `src/{app,features,shared,types}` conforme ADR-0001/0002.
@@ -13,4 +13,4 @@ alwaysApply: true
 - Sem abstrações prematuras (Repository/UseCase/Mapper sem necessidade).
 - Docs novos: `ADR|FEATURE|BUG-NNNN-<slug>.md` (ver `docs/conventions/document-naming.md`).
 - Responder ao usuário em português, salvo pedido contrário.
-- Antes de mudar arquitetura ou produto: ler skill `deep-flow-architecture` ou `writing-project-docs`.
+- Antes de mudar arquitetura ou produto: ler skill `studia-architecture` ou `writing-project-docs`.

@@ -4,7 +4,7 @@ Orienta agentes de IA (Cursor e outros) que trabalham neste repositório.
 
 ## O que é o projeto
 
-Deep Flow é um SaaS de planejamento e organização de estudos. Premissa de produto: **incentivar e organizar, não fiscalizar**.
+Studia (nome anterior: Deep Flow) é um SaaS de planejamento e organização de estudos. Premissa de produto: **incentivar e organizar, não fiscalizar**.
 
 Fonte normativa: `docs/` (ADRs, architecture, product, FEATURE/BUG).  
 Histórico (não normativo): `docs/archive/` — não usar como regra.
@@ -52,7 +52,7 @@ Histórico (não normativo): `docs/archive/` — não usar como regra.
 
 | Skill | Quando |
 |---|---|
-| `deep-flow-architecture` | Qualquer mudança de código/estrutura/arquitetura |
+| `studia-architecture` | Qualquer mudança de código/estrutura/arquitetura |
 | `writing-project-docs` | Criar/editar ADR, FEATURE, BUG ou guideline |
 | `implementing-vue-feature` | Implementar ou alterar uma feature Vue |
 

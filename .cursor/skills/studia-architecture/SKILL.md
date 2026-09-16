@@ -1,13 +1,13 @@
 ---
-name: deep-flow-architecture
+name: studia-architecture
 description: >-
-  Applies Deep Flow frontend architecture invariants (app/features/shared/types,
+  Applies Studia frontend architecture invariants (app/features/shared/types,
   dependency rules, Pinia UI vs resource stores, entitlements via auth).
   Use when creating or changing source structure, features, stores, services,
   shared modules, types, routing, or auth-related client code.
 ---
 
-# Deep Flow — Architecture
+# Studia — Architecture
 
 ## When to use
 

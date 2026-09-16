@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Orientar a leitura da documentação arquitetural do Deep Flow.
+Orientar a leitura da documentação arquitetural da Studia.
 
 ## Premissa
 

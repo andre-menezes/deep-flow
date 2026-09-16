@@ -1,13 +1,13 @@
 ---
 name: writing-project-docs
 description: >-
-  Writes and updates Deep Flow documentation using ADR-NNNN-slug, FEATURE-NNNN-slug,
+  Writes and updates Studia documentation using ADR-NNNN-slug, FEATURE-NNNN-slug,
   and BUG-NNNN-slug conventions with explicit examples and anti-examples.
   Use when creating or editing docs under docs/, ADRs, feature specs, bug specs,
   architecture guidelines, or documentation naming.
 ---
 
-# Deep Flow — Writing project docs
+# Studia — Writing project docs
 
 ## When to use
 

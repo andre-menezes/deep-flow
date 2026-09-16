@@ -1,4 +1,4 @@
-# Documentação do Deep Flow
+# Documentação da Studia
 
 > Esta pasta é a fonte de verdade para humanos e agentes de IA.
 > Código sem respaldo aqui deve ser tratado como provisório.

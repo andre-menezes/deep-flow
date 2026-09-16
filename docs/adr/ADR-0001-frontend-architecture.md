@@ -6,7 +6,7 @@
 
 ## Contexto
 
-O Deep Flow precisa de uma arquitetura frontend explícita antes da implementação, para evitar abstrações prematuras e para que humanos e agentes de IA consigam evoluir o código com segurança.
+A Studia precisa de uma arquitetura frontend explícita antes da implementação, para evitar abstrações prematuras e para que humanos e agentes de IA consigam evoluir o código com segurança.
 
 O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvolvido contra Mock Server externo e, depois, contra API REST real.
 
@@ -30,7 +30,7 @@ O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvol
 
 - Há uma árvore previsível para localizar responsabilidades.
 - O Mock Server permanece fora do repositório do frontend.
-- Decisões de produto em `docs/archive/DISCUSSION-2026-09-initial.md` precisam ser promovidas a ADRs/guidelines/specs antes de virarem regra de implementação.
+- Decisões de produto vivem em `docs/product/vision.md`; mudanças arquiteturais exigem ADR.
 - Trocar Mock → Spring Boot não deve exigir reestruturar `src/`, apenas contratos e configuração HTTP.
 
 ## Exemplos

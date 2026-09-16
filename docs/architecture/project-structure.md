@@ -16,7 +16,7 @@ Frontend Vue em `src/`, documentação em `docs/`, testes E2E/support em `tests/
 ## Árvore-alvo
 
 ```text
-deep-flow/
+studia/
 ├── docs/
 │   ├── product/
 │   ├── adr/

@@ -5,7 +5,7 @@
 
 ## Objetivo
 
-Registrar a visão de produto normativa do Deep Flow, independente do arquivo histórico de discussão.
+Registrar a visão de produto normativa da Studia, independente do arquivo histórico de discussão.
 
 ## Escopo
 
