@@ -13,5 +13,6 @@ alwaysApply: true
 - Sem abstrações prematuras (Repository/UseCase/Mapper sem necessidade).
 - Docs novos: `ADR|FEATURE|BUG-NNNN-<slug>.md` (ver `docs/conventions/document-naming.md`).
 - Git: branch `tipo/descricao` a partir de `develop` antes de editar; nunca push em `main`/`develop` (`docs/conventions/git-workflow.md`).
+- Antes de `git commit`: subagente `studia-code-reviewer` com Verdict APPROVE (hook bloqueia sem pass).
 - Responder ao usuário em português, salvo pedido contrário.
 - Antes de mudar arquitetura ou produto: ler skill `studia-architecture` ou `writing-project-docs`.

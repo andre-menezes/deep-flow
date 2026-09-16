@@ -42,6 +42,7 @@ Histórico (não normativo): `docs/archive/` — não usar como regra.
 9. Responda ao usuário em **português**, salvo se ele pedir outro idioma.
 10. Commits: Conventional Commits; dependências com versões fixas (Bun no frontend).
 11. Git: branch a partir de `develop` antes de qualquer alteração; **nunca** push em `main`/`develop` — ver `docs/conventions/git-workflow.md`.
+12. Antes de **qualquer** `git commit`, executar o subagente `studia-code-reviewer` e só commitar com Verdict **APPROVE** (hook em `.cursor/hooks.json`).
 
 ## O que NÃO fazer ainda
 
@@ -70,3 +71,9 @@ Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 pa
 - Convenção completa: [`docs/conventions/git-workflow.md`](docs/conventions/git-workflow.md).
 - Exemplos: `docs/adr-0005-http-client`, `feat/feature-0001-study-wizard`, `fix/bug-0001-token-refresh`.
 - Cloud Agents: se a plataforma exigir `cursor/...`, manter o restante alinhado (`cursor/docs-adr-0005-http-client-a5fe`).
+
+## Subagentes
+
+| Subagente | Quando |
+|---|---|
+| `studia-code-reviewer` | **Sempre** antes de `git commit`; revisa o diff contra docs normativas |

@@ -10,6 +10,8 @@ Definir onde vive orientação para IA (Skills, Rules, AGENTS.md, MCP) sem dupli
 |---|---|---|
 | `AGENTS.md` | Mapa sempre visível | O que é o repo, links, regras duras curtas |
 | `.cursor/skills/*/SKILL.md` | Procedimentos sob demanda | Workflows (docs, feature, arquitetura) |
+| `.cursor/agents/*.md` | Subagentes especializados | Code review pré-commit, etc. |
+| `.cursor/hooks.json` + `.cursor/hooks/` | Automação de eventos do Agent | Gate de `git commit` após review |
 | `.cursor/rules/*.mdc` | Invariantes / escopo por arquivo | Poucas regras always-on ou por glob |
 | `docs/**` | Fonte normativa | ADRs, guidelines, FEATURE/BUG |
 | `.cursor/mcp.json` | Ferramentas externas | Docs de libs, issues, browser, etc. |
@@ -41,6 +43,16 @@ Invocação: automática por `description` / `paths`, ou manual via `/skill-name
 ```
 
 Manter rules **curtas**. Detalhe aponta para docs.
+
+## Subagentes
+
+```text
+.cursor/agents/
+└── studia-code-reviewer.md
+```
+
+O subagente `studia-code-reviewer` revisa o diff contra ADRs/guidelines/`AGENTS.md`.  
+**Obrigatório antes de cada commit:** o hook `beforeShellExecution` em `.cursor/hooks.json` bloqueia `git commit` até existir um pass válido em `.cursor/hooks/state/code-review-ok.json` (gerado pelo subagente quando o veredito é APPROVE).
 
 ## MCP recomendado
 
