@@ -29,40 +29,49 @@ async function onSubmit() {
 </script>
 
 <template>
-  <main class="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-6 px-4">
-    <h1 class="text-3xl font-semibold tracking-tight">{{ t('common.appName') }}</h1>
-    <p class="text-stone-600">{{ t('auth.login.subtitle') }}</p>
+  <main class="flex min-h-screen items-center justify-center px-4 py-10">
+    <div class="w-full max-w-sm overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+      <div class="flex flex-col gap-1 px-6 pt-6">
+        <h1 class="text-xl font-semibold tracking-tight text-stone-900">{{ t('common.appName') }}</h1>
+        <p class="text-sm text-stone-500">{{ t('auth.login.subtitle') }}</p>
+      </div>
 
-    <form class="flex flex-col gap-3" @submit.prevent="onSubmit">
-      <label class="flex flex-col gap-1 text-sm">
-        <span>{{ t('auth.login.email') }}</span>
-        <input
-          v-model="email"
-          type="email"
-          required
-          class="rounded-md border border-stone-300 bg-white px-3 py-2"
-        />
-      </label>
-      <label class="flex flex-col gap-1 text-sm">
-        <span>{{ t('auth.login.password') }}</span>
-        <input
-          v-model="password"
-          type="password"
-          required
-          minlength="8"
-          class="rounded-md border border-stone-300 bg-white px-3 py-2"
-        />
-      </label>
-      <p v-if="errorCode" class="text-sm text-red-700" role="alert">
-        {{ t(`errors.${errorCode}`, t('errors.INTERNAL_ERROR')) }}
-      </p>
-      <button
-        type="submit"
-        class="rounded-md bg-stone-900 px-4 py-2 text-white disabled:opacity-60"
-        :disabled="pending"
-      >
-        {{ pending ? t('common.loading') : t('auth.login.submit') }}
-      </button>
-    </form>
+      <form class="flex flex-col gap-4 px-6 py-6" @submit.prevent="onSubmit">
+        <label class="flex flex-col gap-1.5 text-sm">
+          <span class="font-medium text-stone-700">{{ t('auth.login.email') }}</span>
+          <input
+            v-model="email"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="voce@studia.app"
+            class="rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
+          />
+        </label>
+        <label class="flex flex-col gap-1.5 text-sm">
+          <span class="font-medium text-stone-700">{{ t('auth.login.password') }}</span>
+          <input
+            v-model="password"
+            type="password"
+            required
+            minlength="8"
+            autocomplete="current-password"
+            class="rounded-lg border border-stone-300 bg-white px-3 py-2.5 text-sm text-stone-900 outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
+          />
+        </label>
+
+        <p v-if="errorCode" class="text-sm text-red-700" role="alert">
+          {{ t(`errors.${errorCode}`, t('errors.INTERNAL_ERROR')) }}
+        </p>
+
+        <button
+          type="submit"
+          class="mt-1 rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-medium text-white hover:bg-teal-800 disabled:opacity-60"
+          :disabled="pending"
+        >
+          {{ pending ? t('common.loading') : t('auth.login.submit') }}
+        </button>
+      </form>
+    </div>
   </main>
 </template>

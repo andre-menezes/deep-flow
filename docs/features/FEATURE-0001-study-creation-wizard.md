@@ -26,9 +26,12 @@ Permitir que o usuário autenticado crie um **Study** por um fluxo guiado em eta
 
 1. Usuário autenticado inicia “Criar Study”.
 2. Wizard apresenta etapas sequenciais; pode voltar para etapas anteriores **antes** de confirmar.
-3. Ao confirmar, o client envia **um** payload de Study completo (não um “save parcial por step” obrigatório no MVP).
-4. Sucesso: Study criado (status inicial tipicamente `ACTIVE` ou conforme regra do servidor) e navegação para detalhe/dashboard contextual.
-5. Falha (rede, validação, limite): mensagem via i18n a partir de `error.code`; wizard permanece utilizável.
+3. Na etapa de confirmação, o usuário revisa um resumo por campo; cada campo tem uma ação de editar que leva **diretamente** à etapa de origem daquele campo — não apenas um "voltar" sequencial. Ao concluir a edição, o usuário retorna à confirmação com o resumo atualizado (edição direcionada por campo).
+4. Ao confirmar, o client envia **um** payload de Study completo (não um “save parcial por step” obrigatório no MVP).
+5. Sucesso: após o `POST /studies` responder com sucesso, o wizard exibe uma **etapa/estado de sucesso explícito** — não um redirecionamento imediato — com:
+   - CTA primário: ver o Study criado (navega para detalhe/dashboard contextual).
+   - CTA secundário: criar outro Study (reinicia o wizard do zero, a partir da etapa "Sobre").
+6. Falha (rede, validação, limite): mensagem via i18n a partir de `error.code`; wizard permanece utilizável.
 
 Fluxo conceitual de UI:
 
@@ -36,9 +39,9 @@ Fluxo conceitual de UI:
 Sobre (identidade)
   → Objetivo
   → Rotina / Frequência
-  → Confirmação
+  → Confirmação (resumo editável por campo + uso da cota)
   → POST Study
-  → Sucesso
+  → Sucesso (ver Study | criar outro)
 ```
 
 ## Regras
@@ -49,6 +52,7 @@ Sobre (identidade)
 4. Validação de campos obrigatórios por etapa na UI; o servidor/mock revalida no `POST`.
 5. Status do Study ≠ status de Task ≠ sessão de estudo.
 6. Não exigir wizard completo para edições futuras (esta FEATURE não cobre edição).
+7. A ação de editar um campo a partir da etapa de confirmação deve navegar **diretamente** à etapa que contém aquele campo (edição direcionada); não é permitido implementar isso apenas como "voltar" genérico que percorre etapas sequencialmente.
 
 ### Campos mínimos (MVP)
 
@@ -57,16 +61,21 @@ Sobre (identidade)
 | Identidade | Nome/título do Study |
 | Objetivo | Descrição curta do que se quer alcançar |
 | Rotina | Frequência ou disponibilidade declarada (formato simples acordado com API/mock) |
-| Confirmação | Resumo editável voltando às etapas |
+| Confirmação | Resumo editável por campo (edição direcionada à etapa de origem) + indicador de uso da cota mensal |
 
 Detalhe de schema → `docs/api/` / tipos gerados quando existirem.
 
 ## UX
 
 - Uma etapa visível por vez; progresso claro (indicador de steps).
+- Indicador de progresso deve exibir as 4 etapas (Sobre, Objetivo, Rotina, Confirmação) com estado visual distinto para concluída / atual / pendente.
+- A partir do indicador de progresso, o usuário pode navegar diretamente para qualquer etapa **já concluída**; não é permitido pular para uma etapa futura ainda não alcançada.
+- Na etapa de confirmação, cada campo do resumo é editável individualmente (ver "Comportamento" e "Regras"), além de permitir voltar sequencialmente se preferido.
+- Na etapa de confirmação, exibir o uso atual da cota mensal de criação (`usage.studyCreationsThisPeriod`: usado/limite) como informação de contexto para o usuário — ver "Entitlements / limites" para o papel exato desse indicador.
 - Linguagem de assistente (incentivar/organizar), não punitiva.
 - CTA primário: Continuar / Criar Study; secundário: Voltar; cancelar com confirmação se houver dados preenchidos.
 - Em bloqueio de entitlement: explicar o limite e CTA de upgrade **sem** checar `plan ===` na feature (usar `can` / `limits`).
+- Após o submit bem-sucedido, exibir a etapa de sucesso (ver "Comportamento") com os dois CTAs (ver Study criado / criar outro Study).
 
 ## Entitlements / limites
 
@@ -78,6 +87,14 @@ Antes de abrir o wizard ou antes do submit (ambos aceitáveis; preferir **antes 
 Usage e limites vêm da sessão/servidor — **não** inferir cota mensal só contando Studies locais.
 
 Mutação `POST /studies` é revalidada no backend/mock.
+
+### Indicador de uso na confirmação
+
+A etapa de confirmação exibe `usage.studyCreationsThisPeriod` (usado/limite) como **feedback informativo** de UX, não como gate:
+
+- O gate de permissão continua sendo exclusivamente `limits.canCreateStudy(usage)` (ver acima).
+- O indicador de uso não decide se o CTA de confirmar fica habilitado/desabilitado; isso é responsabilidade do `limits.canCreateStudy`.
+- Exibir o indicador não substitui a revalidação do servidor/mock no `POST /studies`.
 
 ## Exemplos
 

@@ -17,13 +17,33 @@ export function useStudyWizard() {
   const stepIndex = computed(() => STEPS.indexOf(currentStep.value))
   const isFirst = computed(() => stepIndex.value === 0)
   const isLast = computed(() => stepIndex.value === STEPS.length - 1)
+  const furthestIndex = ref(0)
 
   function next() {
-    if (!isLast.value) currentStep.value = STEPS[stepIndex.value + 1]!
+    if (!isLast.value) {
+      const target = stepIndex.value + 1
+      currentStep.value = STEPS[target]!
+      if (target > furthestIndex.value) furthestIndex.value = target
+    }
   }
 
   function back() {
     if (!isFirst.value) currentStep.value = STEPS[stepIndex.value - 1]!
+  }
+
+  function goToStep(step: WizardStep) {
+    const target = STEPS.indexOf(step)
+    if (target === -1 || target > furthestIndex.value) return
+    currentStep.value = step
+  }
+
+  function reset() {
+    draft.title = ''
+    draft.objective = ''
+    draft.frequency = ''
+    draft.notes = ''
+    currentStep.value = STEPS[0]!
+    furthestIndex.value = 0
   }
 
   function toPayload(): CreateStudyInput {
@@ -38,5 +58,18 @@ export function useStudyWizard() {
     }
   }
 
-  return { currentStep, draft, stepIndex, isFirst, isLast, next, back, toPayload, steps: STEPS }
+  return {
+    currentStep,
+    draft,
+    stepIndex,
+    isFirst,
+    isLast,
+    furthestIndex,
+    next,
+    back,
+    goToStep,
+    reset,
+    toPayload,
+    steps: STEPS,
+  }
 }

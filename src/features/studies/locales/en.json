@@ -3,7 +3,8 @@
     "home": {
       "title": "Your Studies",
       "subtitle": "What are you studying now?",
-      "create": "Create Study"
+      "create": "Create Study",
+      "empty": "You haven't created a Study yet. Start by organizing your first one."
     },
     "wizard": {
       "title": "New Study",
@@ -14,6 +15,20 @@
         "objective": "Objective",
         "frequency": "Frequency / routine",
         "notes": "Notes (optional)"
+      },
+      "steps": {
+        "identity": "About",
+        "objective": "Objective",
+        "routine": "Routine",
+        "confirm": "Confirmation"
+      },
+      "edit": "Edit",
+      "usage": "You used {used} of {limit} creations available this month.",
+      "success": {
+        "title": "Study created.",
+        "subtitle": "{title} is ready to start.",
+        "view": "View Study",
+        "createAnother": "Create another Study"
       }
     }
   }

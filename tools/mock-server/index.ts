@@ -174,10 +174,30 @@ const server = Bun.serve({
     }
 
     if (!url.pathname.startsWith('/api/v1')) {
-      return withCors(req, problem(404, 'INTERNAL_ERROR', 'Not found'))
+      return withCors(req, problem(404, 'NOT_FOUND', 'Not found'))
     }
 
     const path = url.pathname.replace(/^\/api\/v1/, '') || '/'
+
+    if (req.method === 'GET' && path === '/') {
+      return withCors(
+        req,
+        json({
+          name: 'studia-mock',
+          version: 'v1',
+          status: 'ok',
+          endpoints: [
+            'POST /auth/login',
+            'POST /auth/refresh',
+            'POST /auth/logout',
+            'GET /auth/me',
+            'GET /studies',
+            'POST /studies',
+            'GET /studies/:id',
+          ],
+        }),
+      )
+    }
 
     if (req.method === 'POST' && path === '/auth/login') {
       const body = await readJson<{ email?: string; password?: string }>(req)
@@ -287,7 +307,7 @@ const server = Bun.serve({
       return withCors(req, json(study))
     }
 
-    return withCors(req, problem(404, 'INTERNAL_ERROR', 'Not found'))
+    return withCors(req, problem(404, 'NOT_FOUND', 'Not found'))
   },
 })
 

@@ -35,7 +35,7 @@ onMounted(async () => {
 
     <RouterLink
       v-if="limits.canCreateStudy()"
-      class="inline-flex w-fit rounded-md bg-stone-900 px-4 py-2 text-white"
+      class="inline-flex w-fit rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-800"
       :to="{ name: 'studies-create' }"
     >
       {{ t('studies.home.create') }}
@@ -46,13 +46,17 @@ onMounted(async () => {
       {{ t(`errors.${errorCode}`, t('errors.INTERNAL_ERROR')) }}
     </p>
 
+    <p v-if="studies.status === 'success' && studies.data.length === 0" class="text-sm text-stone-500">
+      {{ t('studies.home.empty') }}
+    </p>
+
     <ul class="flex flex-col gap-3">
       <li
         v-for="study in studies.data"
         :key="study.id"
-        class="rounded-md border border-stone-200 bg-white px-4 py-3"
+        class="rounded-xl border border-stone-200 bg-white px-4 py-3 shadow-sm"
       >
-        <p class="font-medium">{{ study.title }}</p>
+        <p class="font-medium text-stone-900">{{ study.title }}</p>
         <p class="text-sm text-stone-600">{{ study.objective }}</p>
         <p class="mt-1 text-xs uppercase tracking-wide text-stone-500">{{ study.status }}</p>
       </li>

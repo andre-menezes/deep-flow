@@ -3,7 +3,8 @@
     "home": {
       "title": "Seus Studies",
       "subtitle": "O que você está estudando agora?",
-      "create": "Criar Study"
+      "create": "Criar Study",
+      "empty": "Você ainda não criou nenhum Study. Comece organizando o primeiro."
     },
     "wizard": {
       "title": "Novo Study",
@@ -14,6 +15,20 @@
         "objective": "Objetivo",
         "frequency": "Frequência / rotina",
         "notes": "Notas (opcional)"
+      },
+      "steps": {
+        "identity": "Sobre",
+        "objective": "Objetivo",
+        "routine": "Rotina",
+        "confirm": "Confirmação"
+      },
+      "edit": "Editar",
+      "usage": "Você usou {used} de {limit} criações disponíveis este mês.",
+      "success": {
+        "title": "Study criado.",
+        "subtitle": "{title} está pronto para começar.",
+        "view": "Ver Study",
+        "createAnother": "Criar outro Study"
       }
     }
   }

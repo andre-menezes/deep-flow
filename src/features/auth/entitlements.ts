@@ -1,3 +1,4 @@
+import { computed } from 'vue'
 import { useAuthStore } from '@/features/auth/stores/authStore'
 
 export function can(capability: string) {
@@ -11,5 +12,6 @@ export const limits = {
 }
 
 export function useUsage() {
-  return useAuthStore().usage
+  const auth = useAuthStore()
+  return computed(() => auth.usage)
 }
