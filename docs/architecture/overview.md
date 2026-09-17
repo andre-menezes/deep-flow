@@ -22,6 +22,8 @@ Orientar a leitura da documentação arquitetural da Studia.
 | Tooling de IA                        | `ai-tooling.md`                       |
 | HTTP client                          | ADR-0005 + `http-client.md`           |
 | Autenticação (client)                | ADR-0006 + `authentication.md`        |
+| Contrato API                         | ADR-0007 + `docs/api/`                |
+| i18n                                 | `i18n.md`                             |
 | Stub HTTP local de DX                | ADR-0008 + `tools/mock-server/`       |
 | Backlog de decisões                  | `open-decisions.md`                   |
 
@@ -29,15 +31,15 @@ Orientar a leitura da documentação arquitetural da Studia.
 
 - Direção atual: **Spring Boot 3 + Java 21**
 - Frontend não bloqueia: stub DX em `tools/mock-server/` (`bun run mock`); Mock Server oficial/dedicated permanece meta **fora** deste repositório (ADR-0001 + ADR-0008)
-- Contrato futuro: OpenAPI 3.1 + RFC 9457 + cookies para refresh token
+- Contrato: OpenAPI 3.1 em `docs/api/openapi.yaml` + RFC 9457 + cookies para refresh token
 
 ## Próximos documentos recomendados
 
 Em ordem sugerida:
 
-1. Contrato inicial em `docs/api/` + `error-codes.md`
-2. Guideline de UI/componentes e i18n
-3. FEATURE de edição de Study / dashboard (após FEATURE-0001)
+1. Guideline de UI/componentes (mínima)
+2. FEATURE de edição de Study / dashboard (após FEATURE-0001)
+3. Estratégia de testes + coverage mínimo
 
 ## Fonte de premissas
 

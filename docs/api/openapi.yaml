@@ -1,0 +1,324 @@
+openapi: 3.1.0
+info:
+  title: Studia API
+  version: 0.1.0
+  description: >
+    Contrato MVP para Mock Server e futuro Spring Boot.
+    Access token via Authorization Bearer (memória no client).
+    Refresh token via cookie HttpOnly (credentials include).
+servers:
+  - url: /api/v1
+    description: Base path MVP
+tags:
+  - name: auth
+  - name: studies
+paths:
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Login with email and password
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Authenticated
+          headers:
+            Set-Cookie:
+              description: Refresh token HttpOnly cookie
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSessionResponse'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
+  /auth/refresh:
+    post:
+      tags: [auth]
+      summary: Rotate refresh cookie and issue new access token
+      operationId: refresh
+      responses:
+        '200':
+          description: Session renewed
+          headers:
+            Set-Cookie:
+              description: Rotated refresh token HttpOnly cookie
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSessionResponse'
+        '401':
+          $ref: '#/components/responses/Problem'
+  /auth/logout:
+    post:
+      tags: [auth]
+      summary: Invalidate current session
+      operationId: logout
+      security:
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Logged out
+        '401':
+          $ref: '#/components/responses/Problem'
+  /auth/me:
+    get:
+      tags: [auth]
+      summary: Current user, plan, entitlements and usage
+      operationId: getMe
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Session profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeResponse'
+        '401':
+          $ref: '#/components/responses/Problem'
+  /studies:
+    get:
+      tags: [studies]
+      summary: List studies for the current user
+      operationId: listStudies
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Study list
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Study'
+        '401':
+          $ref: '#/components/responses/Problem'
+    post:
+      tags: [studies]
+      summary: Create a study (wizard submit)
+      operationId: createStudy
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudyRequest'
+      responses:
+        '201':
+          description: Study created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Study'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '403':
+          $ref: '#/components/responses/Problem'
+        '422':
+          $ref: '#/components/responses/Problem'
+  /studies/{studyId}:
+    get:
+      tags: [studies]
+      summary: Get study by id
+      operationId: getStudy
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/studyId'
+      responses:
+        '200':
+          description: Study
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Study'
+        '401':
+          $ref: '#/components/responses/Problem'
+        '404':
+          $ref: '#/components/responses/Problem'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    studyId:
+      name: studyId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+  schemas:
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+    AuthSessionResponse:
+      type: object
+      required: [accessToken, user, plan, entitlements, usage]
+      properties:
+        accessToken:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        plan:
+          $ref: '#/components/schemas/Plan'
+        entitlements:
+          $ref: '#/components/schemas/Entitlements'
+        usage:
+          $ref: '#/components/schemas/Usage'
+    MeResponse:
+      type: object
+      required: [user, plan, entitlements, usage]
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        plan:
+          $ref: '#/components/schemas/Plan'
+        entitlements:
+          $ref: '#/components/schemas/Entitlements'
+        usage:
+          $ref: '#/components/schemas/Usage'
+    User:
+      type: object
+      required: [id, email, displayName]
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+          format: email
+        displayName:
+          type: string
+    Plan:
+      type: string
+      enum: [FREE, PREMIUM]
+      description: Informative for billing UI only — never authorize with plan checks
+    Entitlements:
+      type: object
+      required: [capabilities, limits]
+      properties:
+        capabilities:
+          type: array
+          items:
+            type: string
+          example: [studies.create, statistics.advanced]
+        limits:
+          type: object
+          additionalProperties:
+            type: integer
+          example:
+            maxActiveStudies: 3
+            maxStudyCreationsPerMonth: 10
+    Usage:
+      type: object
+      required: [studyCreationsThisPeriod]
+      properties:
+        studyCreationsThisPeriod:
+          type: object
+          required: [used, limit, remaining]
+          properties:
+            used:
+              type: integer
+              minimum: 0
+            limit:
+              type: integer
+              minimum: 0
+            remaining:
+              type: integer
+              minimum: 0
+    StudyStatus:
+      type: string
+      enum: [ACTIVE, PAUSED, COMPLETED, ARCHIVED]
+    StudyRoutine:
+      type: object
+      required: [frequency]
+      properties:
+        frequency:
+          type: string
+          description: Simple declared cadence (e.g. daily, weekdays, custom text)
+        notes:
+          type: string
+    Study:
+      type: object
+      required: [id, title, objective, routine, status, createdAt]
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        objective:
+          type: string
+        routine:
+          $ref: '#/components/schemas/StudyRoutine'
+        status:
+          $ref: '#/components/schemas/StudyStatus'
+        createdAt:
+          type: string
+          format: date-time
+    CreateStudyRequest:
+      type: object
+      required: [title, objective, routine]
+      properties:
+        title:
+          type: string
+          minLength: 1
+        objective:
+          type: string
+          minLength: 1
+        routine:
+          $ref: '#/components/schemas/StudyRoutine'
+        status:
+          $ref: '#/components/schemas/StudyStatus'
+          default: ACTIVE
+    Problem:
+      type: object
+      required: [type, title, status, code]
+      properties:
+        type:
+          type: string
+          format: uri
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        code:
+          type: string
+          description: Stable business error code for i18n mapping
+  responses:
+    Problem:
+      description: RFC 9457 problem details with Studia `code`
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
