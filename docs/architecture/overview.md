@@ -23,6 +23,7 @@ Orientar a leitura da documentação arquitetural da Studia.
 | HTTP client                          | ADR-0005 + `http-client.md`           |
 | Autenticação (client)                | ADR-0006 + `authentication.md`        |
 | Contrato API                         | ADR-0007 + `docs/api/`                |
+| i18n                                 | `i18n.md`                             |
 | Backlog de decisões                  | `open-decisions.md`                   |
 
 ## Backend (direção, ainda não implementado)
@@ -35,7 +36,7 @@ Orientar a leitura da documentação arquitetural da Studia.
 
 Em ordem sugerida:
 
-1. Guideline de i18n (e UI mínima)
+1. Guideline de UI/componentes (mínima)
 2. FEATURE de edição de Study / dashboard (após FEATURE-0001)
 3. Scaffolding mínimo do app Vue contra Mock Server
 

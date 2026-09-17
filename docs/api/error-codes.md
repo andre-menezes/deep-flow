@@ -43,4 +43,4 @@ toast.error(error.detail)
 
 - ADR-0005, ADR-0007
 - `docs/api/openapi.yaml`
-- `docs/architecture/i18n.md` (quando existir)
+- `docs/architecture/i18n.md`
