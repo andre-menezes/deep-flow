@@ -3,6 +3,7 @@
     "login": {
       "subtitle": "Sign in to organize your Studies.",
       "email": "Email",
+      "emailPlaceholder": "you@studia.app",
       "password": "Password",
       "submit": "Sign in"
     }
