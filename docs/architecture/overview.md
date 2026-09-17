@@ -22,6 +22,7 @@ Orientar a leitura da documentação arquitetural da Studia.
 | Tooling de IA                        | `ai-tooling.md`                       |
 | HTTP client                          | ADR-0005 + `http-client.md`           |
 | Autenticação (client)                | ADR-0006 + `authentication.md`        |
+| Contrato API                         | ADR-0007 + `docs/api/`                |
 | i18n                                 | `i18n.md`                             |
 | Backlog de decisões                  | `open-decisions.md`                   |
 
@@ -29,13 +30,13 @@ Orientar a leitura da documentação arquitetural da Studia.
 
 - Direção atual: **Spring Boot 3 + Java 21**
 - Frontend não bloqueia: Mock Server externo
-- Contrato futuro: OpenAPI 3.1 + RFC 9457 + cookies para refresh token
+- Contrato: OpenAPI 3.1 em `docs/api/openapi.yaml` + RFC 9457 + cookies para refresh token
 
 ## Próximos documentos recomendados
 
 Em ordem sugerida:
 
-1. Contrato inicial em `docs/api/` + `error-codes.md` (PR em andamento / ADR-0007)
+1. Guideline de UI/componentes (mínima)
 2. FEATURE de edição de Study / dashboard (após FEATURE-0001)
 3. Scaffolding mínimo do app Vue contra Mock Server
 

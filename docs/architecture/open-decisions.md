@@ -24,6 +24,7 @@ Substituir a lista §56–57 da discussão inicial por um backlog vivo de decis�
 | HTTP client / single-flight / erros HTTP (mínimo) | ADR-0005 + `http-client.md` |
 | Auth (sliding session, rotation, bootstrap, TTLs MVP) | ADR-0006 + `authentication.md` |
 | FEATURE Study creation wizard | FEATURE-0001 |
+| Contrato API OpenAPI + error codes | ADR-0007 + `docs/api/` |
 | i18n (organização e erros → chaves) | `docs/architecture/i18n.md` |
 
 ## Abertas (próximos passos sugeridos)
@@ -33,16 +34,14 @@ Ordenado pela sequência útil de documentação:
 | # | Tema | Artefato sugerido |
 |---|---|---|
 | 1 | Sessões multi-dispositivo / revogação (UI) | ADR (pode adiar pós-MVP) |
-| 2 | Contratos de API + OpenAPI generation | `docs/api/` + ADR |
-| 3 | Tratamento de erros (RFC 9457 → i18n) catálogo | guideline + `docs/api/error-codes.md` |
-| 4 | Período exato da cota mensal de criações | ADR de billing/usage |
-| 5 | Critérios de composables e componentes | guideline UI |
-| 6 | Layouts, navegação, design tokens, breakpoints | guideline + FEATURE dashboard |
-| 7 | Sistema de componentes / a11y / SEO | guidelines |
-| 8 | Estratégia de testes + coverage mínimo | guideline `testing.md` |
-| 9 | CI/CD + versionamento do app | guideline / ADR |
-| 10 | Modelo definitivo de Task / Note | FEATURE ou domain spec |
-| 11 | Necessidade de StudySession no roadmap | product decision |
+| 2 | Período exato da cota mensal de criações | ADR de billing/usage |
+| 3 | Critérios de composables e componentes | guideline UI |
+| 4 | Layouts, navegação, design tokens, breakpoints | guideline + FEATURE dashboard |
+| 5 | Sistema de componentes / a11y / SEO | guidelines |
+| 6 | Estratégia de testes + coverage mínimo | guideline `testing.md` |
+| 7 | CI/CD + versionamento do app | guideline / ADR |
+| 8 | Modelo definitivo de Task / Note | FEATURE ou domain spec |
+| 9 | Necessidade de StudySession no roadmap | product decision |
 
 ## Critério para apagar o arquivo histórico
 
