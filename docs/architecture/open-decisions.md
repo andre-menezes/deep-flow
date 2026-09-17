@@ -26,6 +26,7 @@ Substituir a lista §56–57 da discussão inicial por um backlog vivo de decis�
 | FEATURE Study creation wizard | FEATURE-0001 |
 | Contrato API OpenAPI + error codes | ADR-0007 + `docs/api/` |
 | i18n (organização e erros → chaves) | `docs/architecture/i18n.md` |
+| Stub HTTP local de DX (`tools/mock-server`) | ADR-0008 |
 
 ## Abertas (próximos passos sugeridos)
 

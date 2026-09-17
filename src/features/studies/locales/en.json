@@ -1,0 +1,61 @@
+{
+  "studies": {
+    "home": {
+      "title": "Your Studies",
+      "subtitle": "What are you studying now?",
+      "create": "Create Study",
+      "empty": "You haven't created a Study yet. Start by organizing your first one."
+    },
+    "wizard": {
+      "title": "New Study",
+      "step": "Step {step} of {total}",
+      "stepperAria": "Wizard steps",
+      "submit": "Create Study",
+      "cancelConfirmTitle": "Discard Study?",
+      "cancelConfirm": "Discard this Study and go back?",
+      "cancelConfirmKeep": "Keep editing",
+      "cancelConfirmDiscard": "Discard",
+      "fields": {
+        "title": "Name",
+        "objective": "Objective",
+        "frequency": "Frequency / routine",
+        "notes": "Notes (optional)"
+      },
+      "prompts": {
+        "identity": {
+          "heading": "What should we call this Study?",
+          "hint": "A short name makes it easy to spot on your dashboard.",
+          "placeholder": "Calculus I"
+        },
+        "objective": {
+          "heading": "What is the objective?",
+          "hint": "Describe in a few words what you want to achieve.",
+          "placeholder": "Pass the final exam with a grade above 8"
+        },
+        "routine": {
+          "heading": "How often will you study?",
+          "hint": "This helps organize your routine — without policing results.",
+          "frequencyPlaceholder": "3x per week",
+          "notesPlaceholder": "Mornings, 1h sessions"
+        },
+        "confirm": {
+          "heading": "Review before creating"
+        }
+      },
+      "steps": {
+        "identity": "About",
+        "objective": "Objective",
+        "routine": "Routine",
+        "confirm": "Confirmation"
+      },
+      "edit": "Edit",
+      "usage": "You used {used} of {limit} creations available this month.",
+      "success": {
+        "title": "Study created.",
+        "subtitle": "{title} is ready to start.",
+        "view": "View Study",
+        "createAnother": "Create another Study"
+      }
+    }
+  }
+}

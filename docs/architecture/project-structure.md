@@ -6,12 +6,13 @@ Descrever a árvore-alvo do frontend e o que pertence a cada pasta.
 
 ## Escopo
 
-Frontend Vue em `src/`, documentação em `docs/`, testes E2E/support em `tests/`.
+Frontend Vue em `src/`, documentação em `docs/`, testes E2E/support em `tests/`, tooling de DX em `tools/` (ADR-0008).
 
 ## Fora do escopo
 
 - Estrutura do repositório backend Spring Boot (futuro, repositório separado ou não — TBD).
 - Implementação física obrigatória de todas as pastas no dia 1.
+- Mock Server oficial/dedicated (permanece fora deste repositório; ver ADR-0001 + ADR-0008).
 
 ## Árvore-alvo
 
@@ -24,6 +25,8 @@ studia/
 │   ├── features/
 │   ├── api/
 │   └── conventions/
+├── tools/
+│   └── mock-server/          # stub HTTP de DX (ADR-0008); não é src/
 ├── src/
 │   ├── app/
 │   │   ├── main.ts
@@ -54,6 +57,8 @@ studia/
     ├── e2e/
     └── support/
 ```
+
+`tools/` é tooling de desenvolvimento (ex.: `bun run mock`). Não deve ser importado por `src/` nem empacotado como parte da aplicação Vue.
 
 ## Anatomia de uma feature
 
@@ -96,5 +101,5 @@ Um desenvolvedor ou agente consegue responder “onde coloco X?” usando este d
 
 ## Referências
 
-- ADR-0001, ADR-0002
+- ADR-0001, ADR-0002, ADR-0008
 - `docs/architecture/dependency-rules.md`

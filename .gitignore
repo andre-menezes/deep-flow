@@ -17,3 +17,9 @@ Thumbs.db
 
 # Cursor hook ephemeral state (code-review gate)
 .cursor/hooks/state/
+
+# Build
+dist/
+storybook-static/
+*.tsbuildinfo
+

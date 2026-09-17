@@ -24,12 +24,13 @@ Orientar a leitura da documentação arquitetural da Studia.
 | Autenticação (client)                | ADR-0006 + `authentication.md`        |
 | Contrato API                         | ADR-0007 + `docs/api/`                |
 | i18n                                 | `i18n.md`                             |
+| Stub HTTP local de DX                | ADR-0008 + `tools/mock-server/`       |
 | Backlog de decisões                  | `open-decisions.md`                   |
 
 ## Backend (direção, ainda não implementado)
 
 - Direção atual: **Spring Boot 3 + Java 21**
-- Frontend não bloqueia: Mock Server externo
+- Frontend não bloqueia: stub DX em `tools/mock-server/` (`bun run mock`); Mock Server oficial/dedicated permanece meta **fora** deste repositório (ADR-0001 + ADR-0008)
 - Contrato: OpenAPI 3.1 em `docs/api/openapi.yaml` + RFC 9457 + cookies para refresh token
 
 ## Próximos documentos recomendados
@@ -38,7 +39,7 @@ Em ordem sugerida:
 
 1. Guideline de UI/componentes (mínima)
 2. FEATURE de edição de Study / dashboard (após FEATURE-0001)
-3. Scaffolding mínimo do app Vue contra Mock Server
+3. Estratégia de testes + coverage mínimo
 
 ## Fonte de premissas
 

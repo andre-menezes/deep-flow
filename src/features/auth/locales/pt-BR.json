@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "login": {
+      "subtitle": "Entre para organizar seus Estudos.",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@studia.app",
+      "password": "Senha",
+      "submit": "Entrar"
+    }
+  }
+}

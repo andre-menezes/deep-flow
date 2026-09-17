@@ -63,3 +63,4 @@ O que passa a ser mais fácil, mais difícil ou proibido.
 | [ADR-0005](./ADR-0005-http-client.md)                        | HTTP client                        | Accepted |
 | [ADR-0006](./ADR-0006-authentication-strategy.md)            | Authentication strategy            | Accepted |
 | [ADR-0007](./ADR-0007-api-contract.md)                       | API contract                       | Accepted |
+| [ADR-0008](./ADR-0008-local-http-mock-stub.md)               | Local HTTP mock stub (DX)          | Accepted |

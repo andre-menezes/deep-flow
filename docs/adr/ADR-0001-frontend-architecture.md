@@ -1,6 +1,6 @@
 # ADR-0001 — Frontend architecture
 
-- **Status:** Accepted
+- **Status:** Accepted *(amenda parcial: [ADR-0008](./ADR-0008-local-http-mock-stub.md) — stub HTTP de DX em `tools/mock-server/`)*
 - **Data:** 2026-09-16
 - **Contexto:** `docs/archive/DISCUSSION-2026-09-initial.md` §§31–37, 55–58
 
@@ -8,7 +8,7 @@
 
 A Studia precisa de uma arquitetura frontend explícita antes da implementação, para evitar abstrações prematuras e para que humanos e agentes de IA consigam evoluir o código com segurança.
 
-O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvolvido contra Mock Server externo e, depois, contra API REST real.
+O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvolvido contra HTTP mockada (stub local de DX e/ou Mock Server oficial externo) e, depois, contra API REST real.
 
 ## Decisão
 
@@ -29,7 +29,7 @@ O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvol
 ## Consequências
 
 - Há uma árvore previsível para localizar responsabilidades.
-- O Mock Server permanece fora do repositório do frontend.
+- O Mock Server **oficial / dedicado** permanece fora do repositório do frontend. Stub HTTP mínimo de DX em `tools/mock-server/` é permitido pela [ADR-0008](./ADR-0008-local-http-mock-stub.md) e **não** substitui essa meta.
 - Decisões de produto vivem em `docs/product/vision.md`; mudanças arquiteturais exigem ADR.
 - Trocar Mock → Spring Boot não deve exigir reestruturar `src/`, apenas contratos e configuração HTTP.
 
@@ -55,5 +55,6 @@ O backend (Spring Boot 3 / Java 21) ainda não existe. O frontend será desenvol
 ## Referências
 
 - `docs/adr/ADR-0002-feature-oriented-project-structure.md`
+- `docs/adr/ADR-0008-local-http-mock-stub.md` (amenda parcial: stub DX local)
 - `docs/architecture/project-structure.md`
 - `docs/archive/DISCUSSION-2026-09-initial.md`

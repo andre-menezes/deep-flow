@@ -1,0 +1,21 @@
+{
+  "common": {
+    "appName": "Studia",
+    "loading": "Carregando…",
+    "continue": "Continuar",
+    "back": "Voltar",
+    "cancel": "Cancelar",
+    "logout": "Sair"
+  },
+  "errors": {
+    "INTERNAL_ERROR": "Algo deu errado. Tente novamente.",
+    "AUTH_INVALID_CREDENTIALS": "E-mail ou senha inválidos.",
+    "AUTH_UNAUTHORIZED": "Faça login para continuar.",
+    "AUTH_REFRESH_INVALID": "Sua sessão expirou. Entre novamente.",
+    "AUTH_FORBIDDEN": "Você não tem permissão para esta ação.",
+    "VALIDATION_FAILED": "Verifique os dados informados.",
+    "STUDY_NOT_FOUND": "Estudo não encontrado.",
+    "STUDY_CREATE_LIMIT_REACHED": "Você atingiu o limite mensal de criação de Estudos.",
+    "STUDY_ACTIVE_LIMIT_REACHED": "Você atingiu o limite de Estudos ativos."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "studies": {
+    "home": {
+      "title": "Seus Estudos",
+      "subtitle": "O que você está estudando agora?",
+      "create": "Criar Estudo",
+      "empty": "Você ainda não criou nenhum Estudo. Comece organizando o primeiro."
+    },
+    "wizard": {
+      "title": "Novo Estudo",
+      "step": "Etapa {step} de {total}",
+      "stepperAria": "Etapas do assistente",
+      "submit": "Criar Estudo",
+      "cancelConfirmTitle": "Descartar Estudo?",
+      "cancelConfirm": "Descartar este Estudo e voltar?",
+      "cancelConfirmKeep": "Continuar editando",
+      "cancelConfirmDiscard": "Descartar",
+      "fields": {
+        "title": "Nome",
+        "objective": "Objetivo",
+        "frequency": "Frequência / rotina",
+        "notes": "Notas (opcional)"
+      },
+      "prompts": {
+        "identity": {
+          "heading": "Como vamos chamar esse Estudo?",
+          "hint": "Um nome curto ajuda a reconhecer no seu painel.",
+          "placeholder": "Cálculo I"
+        },
+        "objective": {
+          "heading": "Qual é o objetivo?",
+          "hint": "Descreva em poucas palavras o que você quer alcançar.",
+          "placeholder": "Passar na prova final com nota acima de 8"
+        },
+        "routine": {
+          "heading": "Com que frequência você vai estudar?",
+          "hint": "Isso ajuda a organizar sua rotina — sem cobrar resultado.",
+          "frequencyPlaceholder": "3x por semana",
+          "notesPlaceholder": "Manhãs, sessões de 1h"
+        },
+        "confirm": {
+          "heading": "Revise antes de criar"
+        }
+      },
+      "steps": {
+        "identity": "Sobre",
+        "objective": "Objetivo",
+        "routine": "Rotina",
+        "confirm": "Confirmação"
+      },
+      "edit": "Editar",
+      "usage": "Você usou {used} de {limit} criações disponíveis este mês.",
+      "success": {
+        "title": "Estudo criado.",
+        "subtitle": "{title} está pronto para começar.",
+        "view": "Ver Estudo",
+        "createAnother": "Criar outro Estudo"
+      }
+    }
+  }
+}

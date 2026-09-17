@@ -12,7 +12,7 @@ Aplicar a ADR-0005 no dia a dia: onde vive o cliente, como services o usam e o q
 
 - Política de expiração/rotação de tokens (ADR-0006).
 - Catálogo completo de error codes (`docs/api/error-codes.md`).
-- Implementação do Mock Server (repositório externo).
+- Implementação do stub DX (`tools/mock-server/`, ADR-0008) ou do Mock Server oficial (repositório externo).
 
 ## Onde colocar
 
@@ -98,4 +98,4 @@ Qualquer feature nova consome a API só via service + `shared/http`, com auth e 
 
 - ADR-0005
 - ADR-0003, `docs/architecture/state-management.md`
-- ADR-0001
+- ADR-0001, ADR-0008 (`tools/mock-server/` — stub DX; mock oficial externo)

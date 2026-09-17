@@ -1,0 +1,21 @@
+import { Meta, Canvas } from '@storybook/blocks'
+import * as AppButtonStories from './AppButton.stories'
+import * as AppStepperStories from './AppStepper.stories'
+
+<Meta title="Design System/Introduction" />
+
+# Studia Design System
+
+Componentes base em `src/shared/ui/` — sem domínio de produto (`Study` / auth).
+
+- Toolbar **Theme**: light / dark (classe `.dark` + tokens do tema)
+- Ícones: Material Symbols Outlined
+- Stories colocadas junto aos componentes (`*.stories.ts`)
+
+## AppButton
+
+<Canvas of={AppButtonStories.Variants} />
+
+## AppStepper
+
+<Canvas of={AppStepperStories.MidProgress} />

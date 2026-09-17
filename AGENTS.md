@@ -14,7 +14,7 @@ Histórico (não normativo): `docs/archive/` — não usar como regra.
 - Fase: documentação e arquitetura (pouco ou nenhum código de app ainda).
 - Frontend alvo: Vue 3 + TypeScript + Vite + Pinia + Vue Router + Tailwind v4 + ofetch + Vue I18n.
 - Backend alvo (ainda inexistente): Spring Boot 3 + Java 21.
-- Desenvolvimento inicial do frontend: Mock Server **fora** deste repositório.
+- DX local: stub HTTP em `tools/mock-server/` (`bun run mock`, ADR-0008). Mock Server oficial/dedicated permanece meta **fora** deste repositório (ADR-0001).
 
 ## Mapa rápido
 
@@ -81,6 +81,7 @@ Ver `docs/architecture/ai-tooling.md` e `.cursor/mcp.json`. Preferir Context7 pa
 | `studia-docs-writer` | Criar/editar ADR, FEATURE, BUG, guidelines; fechar itens em `open-decisions.md` |
 | `studia-architecture-guard` | Após mudanças em `src/` ou dúvidas de camadas/imports/HTTP/entitlements |
 | `studia-feature-implementer` | Implementar comportamento a partir de `FEATURE-NNNN` (Vue/features) |
+| `studia-ui-designer` | Layout/UX de views e componentes Vue a partir da seção "UX" de uma FEATURE ou de um wireframe |
 | `studia-pr-summarizer` | Antes de `gh pr create`; título/corpo no template do repositório |
 | `studia-api-contract` | Contratos em `docs/api/`, error codes, alinhamento ADR-0005 |
 | `studia-i18n-checker` | Locales pt-BR/en e mapeamento de erros API → i18n |
