@@ -18,8 +18,9 @@ Thumbs.db
 # Cursor hook ephemeral state (code-review gate)
 .cursor/hooks/state/
 
-# Build
+# Build / Vite cache
 dist/
+.vite/
 storybook-static/
 *.tsbuildinfo
 
