@@ -27,3 +27,13 @@ bun run dev
 Login seed do mock: `demo@studia.app` / `studia123`
 
 `VITE_API_BASE_URL` deve apontar para o Mock (ex.: `http://localhost:3000/api/v1`).
+
+## Design System (Storybook)
+
+Componentes em `src/shared/ui/` documentados no Storybook:
+
+```bash
+bun run storybook
+```
+
+Abre em `http://localhost:6006`. Build estático: `bun run build-storybook`.

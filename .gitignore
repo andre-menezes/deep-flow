@@ -20,5 +20,6 @@ Thumbs.db
 
 # Build
 dist/
+storybook-static/
 *.tsbuildinfo
 
